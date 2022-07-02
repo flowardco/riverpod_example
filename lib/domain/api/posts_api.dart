@@ -4,7 +4,7 @@ import 'package:salt/domain/view_models/post_view_model.dart';
 
 class PostsAPI extends BaseAPI {
   Future<List<PostViewModel>> getPosts() async {
-    var result = await get<List<PostViewModel>>(route: Routes.posts);
-    return result ?? [];
+    var result = await get<List<dynamic>>(route: Routes.posts);
+    return result?.map((e) => PostViewModel.fromJson(e)).toList() ?? [];
   }
 }

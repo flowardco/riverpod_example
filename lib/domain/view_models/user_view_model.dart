@@ -4,11 +4,11 @@ part 'user_view_model.g.dart';
 
 @JsonSerializable()
 class UserViewModel {
-  int albumId;
-  int userId;
-  String name;
-  String url;
-  String thumbnailUrl;
+  final int albumId;
+  final int userId;
+  final String name;
+  final String url;
+  final String thumbnailUrl;
 
   UserViewModel({
     required this.albumId,

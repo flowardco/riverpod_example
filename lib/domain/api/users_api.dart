@@ -4,7 +4,7 @@ import 'package:salt/domain/view_models/user_view_model.dart';
 
 class UsersAPI extends BaseAPI {
   Future<List<UserViewModel>> getUsers() async {
-    var result = await get<List<UserViewModel>>(route: Routes.users);
-    return result ?? [];
+    var result = await get<List<dynamic>>(route: Routes.users);
+    return result?.map((e) => UserViewModel.fromJson(e)).toList() ?? [];
   }
 }

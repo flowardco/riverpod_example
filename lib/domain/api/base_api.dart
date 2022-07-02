@@ -44,6 +44,7 @@ class BaseAPI {
           method: requestType.type,
         ),
       );
+      _print("response: ${response.data}");
       return response.data;
     } on DioError catch (ex) {
       _print("Dio error: ${ex.response?.data}");
