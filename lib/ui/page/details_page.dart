@@ -20,10 +20,13 @@ class DetailsPage extends StatelessWidget {
             expandedHeight: ScreenValues.imageLarge,
             flexibleSpace: FlexibleSpaceBar(
               title: Text(homeViewModel.name),
-              background: Image.network(
-                homeViewModel.thumbnailUrl,
-                width: double.infinity,
-                fit: BoxFit.cover,
+              background: Hero(
+                tag: homeViewModel.name,
+                child: Image.network(
+                  homeViewModel.thumbnailUrl,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ),

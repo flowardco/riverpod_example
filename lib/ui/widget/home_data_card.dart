@@ -30,10 +30,13 @@ class HomeDataCard extends StatelessWidget {
           child: Row(
             children: [
               ClipOval(
-                child: Image.network(
-                  thumbnail,
-                  width: ScreenValues.imageNormal,
-                  height: ScreenValues.imageNormal,
+                child: Hero(
+                  tag: userName,
+                  child: Image.network(
+                    thumbnail,
+                    width: ScreenValues.imageNormal,
+                    height: ScreenValues.imageNormal,
+                  ),
                 ),
               ),
               SizedBox(width: ScreenValues.paddingNormal),

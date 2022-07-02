@@ -7,6 +7,12 @@ ThemeData appThemeData = ThemeData(
   primaryColorLight: const Color(0xffE3EEFC),
   primaryColorDark: const Color(0xff042FF8),
   scaffoldBackgroundColor: const Color(0xffe3e3e3),
+  appBarTheme: const AppBarTheme(
+    foregroundColor: Color(0xffffffff),
+    iconTheme: IconThemeData(
+      color: Color(0xffffffff),
+    ),
+  ),
   colorScheme: ColorScheme(
     primary: _primaryColor,
     secondary: const Color(0xffE51937),
