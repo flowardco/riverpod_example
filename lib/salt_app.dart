@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:salt/home_page.dart';
+import 'package:salt/ui/page/home_page.dart';
 
 class SaltApp extends StatelessWidget {
   const SaltApp({Key? key}) : super(key: key);
