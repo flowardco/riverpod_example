@@ -1,29 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:salt/provider/main_provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:salt/resources/screen_values.dart';
 import 'package:salt/salt_app.dart';
 import 'package:salt/service/navigation_service.dart';
+import 'package:salt/state.dart';
 import 'package:salt/ui/page/home_page.dart';
 
-class SplashPage extends StatefulWidget {
+class SplashPage extends ConsumerWidget {
   static const String id = "SplashPage";
 
   const SplashPage({Key? key}) : super(key: key);
 
-  @override
-  State<SplashPage> createState() => _SplashPageState();
-}
-
-class _SplashPageState extends State<SplashPage> {
-  @override
-  void initState() {
-    super.initState();
-    _getData();
-  }
-
-  void _getData() async {
-    await context.read<MainProvider>().init();
+  void _getData(WidgetRef ref) async {
+    await ref.read(mainProvider).init();
     _goToNextPage();
   }
 
@@ -32,7 +21,8 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    _getData(ref);
     var textColor = Theme.of(context).colorScheme.onBackground;
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
